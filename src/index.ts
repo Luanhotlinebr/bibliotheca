@@ -20,12 +20,14 @@ bookForm.addEventListener("submit", (e: Event) => {
   books.push(novoLivro);
   bookForm.reset();
   console.log(books);
+  renderBooks();
 });
 
-bookList.innerHTML = "";
-books.forEach((book) => {
-  const li = document.createElement("li") as HTMLLIElement;
-  li.innerHTML = ` <div class="p-4 hover:bg-surface-container-low transition-colors flex items-center justify-between group">
+function renderBooks(): void {
+  bookList.innerHTML = "";
+  books.forEach((book) => {
+    const li = document.createElement("li") as HTMLLIElement;
+    li.innerHTML = ` <div class="p-4 hover:bg-surface-container-low transition-colors flex items-center justify-between group">
    <div class="flex items-center gap-4">
      <div
        class="w-12 h-16 bg-surface-variant rounded shrink-0 flex items-center justify-center overflow-hidden">
@@ -50,7 +52,10 @@ books.forEach((book) => {
    </div>
  </div>
 `;
-  bookList.appendChild(li);
-});
+    bookList.appendChild(li);
+  });
+}
+
+renderBooks();
 //Atributos obrigatorios: Tıtulo, Autor, Ano, Genero e Status (Disponıvel, Lido,
 //Emprestado).
