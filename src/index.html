@@ -218,6 +218,55 @@
     </div>
     <!-- Recent Additions List -->
     <div class="bg-surface-container-lowest rounded-xl border border-surface-variant shadow-sm overflow-hidden">
+      <section
+        class="bg-surface-container-lowest rounded-xl border border-surface-variant shadow-sm overflow-hidden mb-stack-lg">
+        <div class="p-6 border-b border-surface-variant bg-surface-bright">
+          <h3 class="font-headline-md text-headline-md text-primary">Add New Book</h3>
+          <p class="font-body-sm text-body-sm text-on-surface-variant">Enter the details of the new volume to be added
+            to the archive.</p>
+        </div>
+        <form class="p-6 grid grid-cols-1 md:grid-cols-2 gap-6" onsubmit="return false;">
+          <div class="flex flex-col gap-unit">
+            <label class="font-label-md text-label-md text-secondary" for="book-title">Title</label>
+            <input id="book-title" type="text" required=""
+              class="w-full px-4 py-2 border border-outline-variant rounded bg-surface-bright focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary font-body-sm text-body-sm"
+              placeholder="e.g. The Great Gatsby">
+          </div>
+          <div class="flex flex-col gap-unit">
+            <label class="font-label-md text-label-md text-secondary" for="book-author">Author</label>
+            <input id="book-author" type="text" required=""
+              class="w-full px-4 py-2 border border-outline-variant rounded bg-surface-bright focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary font-body-sm text-body-sm"
+              placeholder="e.g. F. Scott Fitzgerald">
+          </div>
+          <div class="flex flex-col gap-unit">
+            <label class="font-label-md text-label-md text-secondary" for="book-year">Year</label>
+            <input id="book-year" type="number" min="1" step="1" required=""
+              class="w-full px-4 py-2 border border-outline-variant rounded bg-surface-bright focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary font-body-sm text-body-sm"
+              placeholder="e.g. 1925">
+          </div>
+          <div class="flex flex-col gap-unit">
+            <label class="font-label-md text-label-md text-secondary" for="book-genre">Genre</label>
+            <input id="book-genre" type="text" required=""
+              class="w-full px-4 py-2 border border-outline-variant rounded bg-surface-bright focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary font-body-sm text-body-sm"
+              placeholder="e.g. Classic Literature">
+          </div>
+          <div class="flex flex-col gap-unit md:col-span-2">
+            <label class="font-label-md text-label-md text-secondary" for="book-status">Status</label>
+            <select id="book-status" required=""
+              class="w-full px-4 py-2 border border-outline-variant rounded bg-surface-bright focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary font-body-sm text-body-sm">
+              <option value="Available">Available</option>
+              <option value="Read">Read</option>
+              <option value="Borrowed">Borrowed</option>
+            </select>
+          </div>
+          <div class="md:col-span-2 flex justify-end mt-2">
+            <button type="submit"
+              class="bg-primary text-on-primary px-6 py-2 rounded font-label-md text-label-md hover:bg-primary-container transition-colors shadow-sm">
+              Add Book
+            </button>
+          </div>
+        </form>
+      </section>
       <div class="p-6 border-b border-surface-variant bg-surface-bright flex justify-between items-center">
         <h3 class="font-headline-md text-headline-md text-primary">Aquisições Recentes</h3>
         <button class="font-label-md text-label-md text-primary hover:underline">Ver catálogo</button>
