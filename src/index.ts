@@ -1,12 +1,32 @@
+type StatusBook = "Disponivel" | "Lido" | "Emprestado";
 type Book = {
   title: string;
   author: string;
   year: number;
   gender: string;
-  status: string;
+  status: StatusBook;
 };
 let books: Array<Book> = [];
+console.log(books);
+const bookForm = document.getElementById("addBookForm") as HTMLFormElement;
+const bookList = document.getElementById("bookList") as HTMLUListElement;
 
+bookForm.addEventListener("submit", (e: Event) => {
+  e.preventDefault();
+
+  const bookFormData = new FormData(bookForm);
+  const novoLivro: Book = {
+    title: bookFormData.get("book-title") as string,
+    author: bookFormData.get("book-author") as string,
+    year: Number(bookFormData.get("book-year")),
+    gender: bookFormData.get("book-genre") as string,
+    status: bookFormData.get("book-status") as StatusBook,
+  };
+
+  books.push(novoLivro);
+  bookForm.reset();
+  console.log(books);
+});
 //Atributos obrigatorios: Tıtulo, Autor, Ano, Genero e Status (Disponıvel, Lido,
 //Emprestado).
 
