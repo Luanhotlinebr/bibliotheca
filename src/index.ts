@@ -1,9 +1,12 @@
 import { Book, StatusBook } from "./types/Book";
+const bookForm = document.getElementById("addBookForm") as HTMLFormElement;
+const bookList = document.getElementById("bookList") as HTMLUListElement;
+const totalBookVolumes = document.getElementById(
+  "totalBookVolumes",
+) as HTMLSpanElement;
 
 let books: Array<Book> = [];
 console.log(books);
-const bookForm = document.getElementById("addBookForm") as HTMLFormElement;
-const bookList = document.getElementById("bookList") as HTMLUListElement;
 
 bookForm.addEventListener("submit", (e: Event) => {
   e.preventDefault();
@@ -21,7 +24,12 @@ bookForm.addEventListener("submit", (e: Event) => {
   bookForm.reset();
   console.log(books);
   renderBooks();
+  renderTotalBooks();
 });
+
+function renderTotalBooks(): void {
+  totalBookVolumes.innerHTML = String(books.length);
+}
 
 function renderBooks(): void {
   bookList.innerHTML = "";
