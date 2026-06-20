@@ -714,7 +714,24 @@ function hmrAccept(bundle /*: ParcelRequire */ , id /*: string */ ) {
 }
 
 },{}],"gH3Lb":[function(require,module,exports,__globalThis) {
-let books = []; //Atributos obrigatorios: Tıtulo, Autor, Ano, Genero e Status (Disponıvel, Lido,
+let books = [];
+console.log(books);
+const bookForm = document.getElementById("addBookForm");
+const bookList = document.getElementById("bookList");
+bookForm.addEventListener("submit", (e)=>{
+    e.preventDefault();
+    const bookFormData = new FormData(bookForm);
+    const novoLivro = {
+        title: bookFormData.get("book-title"),
+        author: bookFormData.get("book-author"),
+        year: Number(bookFormData.get("book-year")),
+        gender: bookFormData.get("book-genre"),
+        status: bookFormData.get("book-status")
+    };
+    books.push(novoLivro);
+    bookForm.reset();
+    console.log(books);
+}); //Atributos obrigatorios: Tıtulo, Autor, Ano, Genero e Status (Disponıvel, Lido,
  //Emprestado).
  // <div class="p-4 hover:bg-surface-container-low transition-colors flex items-center justify-between group">
  //   <div class="flex items-center gap-4">

@@ -226,7 +226,7 @@
             adicionado
             ao arquivo.</p>
         </div>
-        <form class="p-6 grid grid-cols-1 md:grid-cols-2 gap-6" onsubmit="return false;">
+        <form class="p-6 grid grid-cols-1 md:grid-cols-2 gap-6" onsubmit="return false;" id="addBookForm">
           <div class="flex flex-col gap-unit">
             <label class="font-label-md text-label-md text-secondary" for="book-title">Título</label>
             <input id="book-title" type="text" required=""
@@ -272,7 +272,7 @@
         <h3 class="font-headline-md text-headline-md text-primary">Aquisições Recentes</h3>
         <button class="font-label-md text-label-md text-primary hover:underline">Ver catálogo</button>
       </div>
-      <div class="divide-y divide-surface-variant">
+      <ul class="divide-y divide-surface-variant" id="bookList">
         <!-- Item 1 -->
         <div class="p-4 hover:bg-surface-container-low transition-colors flex items-center justify-between group">
           <div class="flex items-center gap-4">
@@ -300,7 +300,7 @@
         </div>
         <!-- Item 2 -->
 
-      </div>
+    </div>
     </div>
   </main>
   <script type="module" src="./index.ts" />
