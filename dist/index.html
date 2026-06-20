@@ -2,13 +2,188 @@
   <meta charset="utf-8">
   <title>Bibliothecca</title>
   <link href="/trabalho-final.61d3354a.css" type="text/css" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Source+Serif+4:wght@600;700&amp;display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+  <script id="tailwind-config">tailwind.config = {
+    darkMode: "class",
+    theme: {
+        extend: {
+            "colors": {
+                "on-background": "#1b1c1c",
+                "on-secondary-container": "#63635f",
+                "surface-variant": "#e4e2e2",
+                "surface-bright": "#fbf9f8",
+                "on-secondary-fixed": "#1b1c19",
+                "surface": "#fbf9f8",
+                "surface-container-highest": "#e4e2e2",
+                "on-tertiary": "#ffffff",
+                "on-tertiary-fixed-variant": "#623f18",
+                "secondary-fixed": "#e4e2dd",
+                "on-secondary-fixed-variant": "#474744",
+                "surface-tint": "#4c6078",
+                "background": "#fbf9f8",
+                "primary": "#03192e",
+                "tertiary-fixed": "#ffdcbd",
+                "on-primary-fixed-variant": "#35485f",
+                "on-tertiary-fixed": "#2c1600",
+                "inverse-on-surface": "#f2f0f0",
+                "outline": "#74777d",
+                "on-surface-variant": "#43474d",
+                "inverse-surface": "#303030",
+                "surface-dim": "#dbd9d9",
+                "secondary": "#5e5e5b",
+                "surface-container-lowest": "#ffffff",
+                "on-tertiary-container": "#ba8b5d",
+                "on-surface": "#1b1c1c",
+                "inverse-primary": "#b4c8e4",
+                "surface-container-low": "#f5f3f3",
+                "on-error-container": "#93000a",
+                "surface-container": "#efeded",
+                "error": "#ba1a1a",
+                "error-container": "#ffdad6",
+                "secondary-fixed-dim": "#c8c6c2",
+                "primary-container": "#1a2e44",
+                "tertiary-fixed-dim": "#f0bd8b",
+                "tertiary-container": "#442602",
+                "primary-fixed": "#d1e4ff",
+                "primary-fixed-dim": "#b4c8e4",
+                "on-error": "#ffffff",
+                "on-primary-container": "#8296b0",
+                "tertiary": "#281400",
+                "on-primary": "#ffffff",
+                "outline-variant": "#c4c6cd",
+                "on-secondary": "#ffffff",
+                "surface-container-high": "#eae8e7",
+                "secondary-container": "#e1dfdb",
+                "on-primary-fixed": "#061d32"
+            },
+            "borderRadius": {
+                "DEFAULT": "0.125rem",
+                "lg": "0.25rem",
+                "xl": "0.5rem",
+                "full": "0.75rem"
+            },
+            "spacing": {
+                "gutter": "24px",
+                "unit": "8px",
+                "stack-sm": "8px",
+                "margin-desktop": "48px",
+                "container-max-width": "1280px",
+                "margin-mobile": "16px",
+                "stack-md": "16px",
+                "stack-lg": "32px"
+            },
+            "fontFamily": {
+                "body-sm": [
+                    "Inter"
+                ],
+                "body-lg": [
+                    "Inter"
+                ],
+                "body-md": [
+                    "Inter"
+                ],
+                "label-md": [
+                    "Inter"
+                ],
+                "headline-xl": [
+                    "\"Source Serif 4\""
+                ],
+                "headline-lg-mobile": [
+                    "\"Source Serif 4\""
+                ],
+                "headline-md": [
+                    "\"Source Serif 4\""
+                ],
+                "headline-lg": [
+                    "\"Source Serif 4\""
+                ],
+                "label-sm": [
+                    "Inter"
+                ]
+            },
+            "fontSize": {
+                "body-sm": [
+                    "14px",
+                    {
+                        "lineHeight": "20px",
+                        "fontWeight": "400"
+                    }
+                ],
+                "body-lg": [
+                    "18px",
+                    {
+                        "lineHeight": "28px",
+                        "fontWeight": "400"
+                    }
+                ],
+                "body-md": [
+                    "16px",
+                    {
+                        "lineHeight": "24px",
+                        "fontWeight": "400"
+                    }
+                ],
+                "label-md": [
+                    "14px",
+                    {
+                        "lineHeight": "16px",
+                        "letterSpacing": "0.02em",
+                        "fontWeight": "600"
+                    }
+                ],
+                "headline-xl": [
+                    "48px",
+                    {
+                        "lineHeight": "56px",
+                        "fontWeight": "700"
+                    }
+                ],
+                "headline-lg-mobile": [
+                    "24px",
+                    {
+                        "lineHeight": "32px",
+                        "fontWeight": "600"
+                    }
+                ],
+                "headline-md": [
+                    "24px",
+                    {
+                        "lineHeight": "32px",
+                        "fontWeight": "600"
+                    }
+                ],
+                "headline-lg": [
+                    "32px",
+                    {
+                        "lineHeight": "40px",
+                        "fontWeight": "600"
+                    }
+                ],
+                "label-sm": [
+                    "12px",
+                    {
+                        "lineHeight": "14px",
+                        "letterSpacing": "0.05em",
+                        "fontWeight": "500"
+                    }
+                ]
+            }
+        }
+    }
+};
 
+</script>
 </head>
 
 <body class="bg-background text-on-background font-body-md antialiased min-h-screen">
   <nav class="hidden md:flex h-screen w-64 fixed left-0 top-0 bg-surface border-r border-surface-variant flex-col py-stack-lg z-50 shadow-sm">
     <div class="px-gutter mb-stack-lg flex flex-col items-center">
-      <img alt="User Profile Avatar" class="w-16 h-16 rounded-full mb-stack-sm object-cover" data-alt="A highly detailed circular avatar showing an elegant, stylized profile of a librarian in a classic setting, using a minimalist corporate modern illustration style. Clean lines, warm paper tones, and soft lighting." src="39a215fcbf8acc84">
+      <img alt="User Profile Avatar" class="w-16 h-16 rounded-full mb-stack-sm object-cover" data-alt="A highly detailed circular avatar showing an elegant, stylized profile of a librarian in a classic setting, using a minimalist corporate modern illustration style. Clean lines, warm paper tones, and soft lighting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBDoNzSH3765_2IHw6NFApvo93vpn0UNziXKkMEWM9I7oRuMKq_-S71o_E3dZfsXXtCpK7XMrNgknQswHe1A6GD5_qPX7RYuuibQl4NlbAXGx_ti9ksk6gFZHEAPT7ffbXeQY3Da7LojLaxLjGePZug0X0CPKr8HjU1rr-TYlNcKQFGwoMjkobmVPNQJORz6Mtk02z0LomzBzaBuN_tSqbhatE0XcLSqWyJXrGCBj4-8nE7EdoN2gxtg-N2YOMBisIqgyn6XZiHGauy">
       <h1 class="font-headline-md text-headline-md text-primary font-bold text-center">Bibliotheca</h1>
       <p class="font-body-sm text-body-sm text-secondary text-center">Personal Archive</p>
     </div>
@@ -109,7 +284,7 @@
         <div class="p-4 hover:bg-surface-container-low transition-colors flex items-center justify-between group">
           <div class="flex items-center gap-4">
             <div class="w-12 h-16 bg-surface-variant rounded flex-shrink-0 flex items-center justify-center overflow-hidden">
-              <img class="w-full h-full object-cover" data-alt="A highly detailed book cover illustration featuring geometric shapes in muted dark blues and warm creams, conveying a scholarly and historical theme. High quality, clear, no text." src="6c64172e0c944a90">
+              <img class="w-full h-full object-cover" data-alt="A highly detailed book cover illustration featuring geometric shapes in muted dark blues and warm creams, conveying a scholarly and historical theme. High quality, clear, no text." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB5L6rckeVONefjJQxcLXPhsDVQvbC5T-ekJIe-oVwZy7XfeSEtGRc6y7v4KzrjWyosTxBF7m425X5EFUbSYsd2ZNdh9ZRiVHL9-qzFtOsnrjGf8hPPCcRXBWEjMglES1CT9xH4Ufq_08cRz8qFF8qTUDIUMEpxRWTnxMcRxK9l03TTKy5neLzom7pPrxqzRdDWU-jSnIIsjnqwq-30vDgkmWF86uXgyDvDqQTZgzEkdHjTIiskjypNhY4qfqhIiT-O-jSKD2NrakYf">
             </div>
             <div>
               <h4 class="font-headline-md text-body-lg text-primary leading-tight">The Architecture of Time</h4>
@@ -128,7 +303,7 @@
         <div class="p-4 hover:bg-surface-container-low transition-colors flex items-center justify-between group">
           <div class="flex items-center gap-4">
             <div class="w-12 h-16 bg-surface-variant rounded flex-shrink-0 flex items-center justify-center overflow-hidden">
-              <img class="w-full h-full object-cover" data-alt="A highly detailed book cover illustration showing an abstract representation of interconnected networks in deep Oxford blue and stark white. Modern, clean lines, corporate intellectual style. High quality, clear, no text." src="b7005d42be6b0c24">
+              <img class="w-full h-full object-cover" data-alt="A highly detailed book cover illustration showing an abstract representation of interconnected networks in deep Oxford blue and stark white. Modern, clean lines, corporate intellectual style. High quality, clear, no text." src="https://lh3.googleusercontent.com/aida-public/AB6AXuARC64s_l7zgFp-VAHGG-ZnFgoZjy7__i83nf3wZjsPRS4fTn7VRFssY05fHOX2eoyISOVGjGSaxFZVeU2Bx55krvwQPNYE8UOr1Nm7ixnSQVbardARYtkYZ_2JvfUuzpaE2yDkdvMljpSOIOFA-mtzIKGx6Q_ZsgiSfxFn92wNoTppDiqe3DKuv70RqV8DTarZgK9jDMyLnnzTzPAkiWMaq2sEmX3leD-EGFmZfWcLx1qMgfb7v_LA6TWTePtdsv2RM3TEIkjhtvzT">
             </div>
             <div>
               <h4 class="font-headline-md text-body-lg text-primary leading-tight">Systems Thinking in Practice</h4>
