@@ -6,3 +6,5 @@ export type Book = {
   status: StatusBook;
 };
 export type StatusBook = "Disponivel" | "Lido" | "Emprestado";
+//Atributos obrigatorios: Tıtulo, Autor, Ano, Genero e Status (Disponıvel, Lido,
+//Emprestado).

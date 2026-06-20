@@ -57,5 +57,3 @@ function renderBooks(): void {
 }
 
 renderBooks();
-//Atributos obrigatorios: Tıtulo, Autor, Ano, Genero e Status (Disponıvel, Lido,
-//Emprestado).
