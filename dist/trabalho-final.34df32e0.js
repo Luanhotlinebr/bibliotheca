@@ -714,7 +714,6 @@ function hmrAccept(bundle /*: ParcelRequire */ , id /*: string */ ) {
 }
 
 },{}],"gH3Lb":[function(require,module,exports,__globalThis) {
-alert("Funcionou");
 
 },{}]},["3dtlh","gH3Lb"], "gH3Lb", "parcelRequirecd22", {})
 
