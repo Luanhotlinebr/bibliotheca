@@ -1,4 +1,14 @@
-let books: Array<any> = [];
+type Book = {
+  title: string;
+  author: string;
+  year: number;
+  gender: string;
+  status: string;
+};
+let books: Array<Book> = [];
+
+//Atributos obrigatorios: Tıtulo, Autor, Ano, Genero e Status (Disponıvel, Lido,
+//Emprestado).
 
 // <div class="p-4 hover:bg-surface-container-low transition-colors flex items-center justify-between group">
 //   <div class="flex items-center gap-4">

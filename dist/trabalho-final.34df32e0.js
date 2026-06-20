@@ -714,7 +714,9 @@ function hmrAccept(bundle /*: ParcelRequire */ , id /*: string */ ) {
 }
 
 },{}],"gH3Lb":[function(require,module,exports,__globalThis) {
-let books = []; // <div class="p-4 hover:bg-surface-container-low transition-colors flex items-center justify-between group">
+let books = []; //Atributos obrigatorios: Tıtulo, Autor, Ano, Genero e Status (Disponıvel, Lido,
+ //Emprestado).
+ // <div class="p-4 hover:bg-surface-container-low transition-colors flex items-center justify-between group">
  //   <div class="flex items-center gap-4">
  //     <div
  //       class="w-12 h-16 bg-surface-variant rounded flex-shrink-0 flex items-center justify-center overflow-hidden">
