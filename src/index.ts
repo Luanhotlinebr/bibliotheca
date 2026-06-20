@@ -1,11 +1,5 @@
-type StatusBook = "Disponivel" | "Lido" | "Emprestado";
-type Book = {
-  title: string;
-  author: string;
-  year: number;
-  gender: string;
-  status: StatusBook;
-};
+import { Book, StatusBook } from "./types/Book";
+
 let books: Array<Book> = [];
 console.log(books);
 const bookForm = document.getElementById("addBookForm") as HTMLFormElement;
@@ -27,6 +21,7 @@ bookForm.addEventListener("submit", (e: Event) => {
   bookForm.reset();
   console.log(books);
 });
+
 //Atributos obrigatorios: Tıtulo, Autor, Ano, Genero e Status (Disponıvel, Lido,
 //Emprestado).
 
