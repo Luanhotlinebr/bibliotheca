@@ -22,13 +22,15 @@ bookForm.addEventListener("submit", (e: Event) => {
 
   books.push(novoLivro);
   bookForm.reset();
-  console.log(books);
   renderBooks();
   renderTotalBooks();
+  console.log(totalBookVolumes);
 });
 
 function renderTotalBooks(): void {
-  totalBookVolumes.innerHTML = String(books.length);
+  console.log("renderTotalBooks rodou");
+
+  totalBookVolumes.innerText = String(books.length);
 }
 
 function renderBooks(): void {
@@ -65,3 +67,4 @@ function renderBooks(): void {
 }
 
 renderBooks();
+renderTotalBooks();
