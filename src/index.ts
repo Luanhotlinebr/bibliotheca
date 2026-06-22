@@ -10,6 +10,21 @@ const totalBookVolumes = document.getElementById(
 ) as HTMLSpanElement;
 const buttonForm = document.getElementById("btn_form") as HTMLButtonElement;
 const buttonText = buttonForm.querySelector("span") as HTMLSpanElement;
+const buttonDeleteItem = document.getElementById(
+  "btn_delete",
+)! as HTMLButtonElement;
+
+document.addEventListener("click", function (evento) {
+  const targetElement = evento.target as Element;
+
+  const deleteButton = targetElement.closest(".btn_delete");
+
+  if (deleteButton) {
+    const bookId = deleteButton.getAttribute("data-id");
+
+    alert(`Botão deletar clicado para o livro com ID: ${bookId}`);
+  }
+});
 
 buttonForm.onclick = () => {
   const display = getComputedStyle(bookFormContainer).display;
@@ -73,8 +88,9 @@ function renderBooks(): void {
      <div class="flex gap-2 opacity-0 group-hover:opacity-100 transition-opacity">
        <button class="p-2 text-secondary hover:text-primary rounded-full hover:bg-surface-variant"><span
            class="material-symbols-outlined text-sm">edit</span></button>
-       <button class="p-2 text-secondary hover:text-error rounded-full hover:bg-error-container"><span
-           class="material-symbols-outlined text-sm">delete</span></button>
+      <button class="p-2 text-secondary hover:text-error rounded-full hover:bg-error-container btn_delete" data-id="${book.title}">
+        <span class="material-symbols-outlined text-sm">delete</span>
+      </button>
      </div>
    </div>
  </div>
