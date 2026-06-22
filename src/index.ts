@@ -10,9 +10,22 @@ const totalBookVolumes = document.getElementById(
 ) as HTMLSpanElement;
 const buttonForm = document.getElementById("btn_form") as HTMLButtonElement;
 const buttonText = buttonForm.querySelector("span") as HTMLSpanElement;
-const buttonDeleteItem = document.getElementById(
-  "btn_delete",
-)! as HTMLButtonElement;
+const inputSearch = document.getElementById("search_input") as HTMLInputElement;
+let books: Array<Book> = [];
+
+const inputBusca = document.getElementById("search_input") as HTMLInputElement;
+inputBusca.addEventListener("input", filtrarLivros);
+
+function filtrarLivros(event: Event): void {
+  const input = event.target as HTMLInputElement;
+  const termo: string = input.value.toLowerCase();
+
+  const produtosFiltrados: Book[] = books.filter((produto) =>
+    produto.title.toLowerCase().includes(termo),
+  );
+
+  renderBooks(produtosFiltrados);
+}
 
 document.addEventListener("click", function (evento) {
   const targetElement = evento.target as Element;
@@ -37,8 +50,6 @@ buttonForm.onclick = () => {
     buttonText.textContent = "Adicionar Livro";
   }
 };
-let books: Array<Book> = [];
-console.log(books);
 
 bookForm.addEventListener("submit", (e: Event) => {
   e.preventDefault();
@@ -46,7 +57,7 @@ bookForm.addEventListener("submit", (e: Event) => {
   const bookFormData = new FormData(bookForm);
   const novoLivro: Book = {
     id: Math.floor(Math.random() * 10001),
-    title: bookFormData.get("book-title") as string,
+    title: String(bookFormData.get("book-title") as string).toLowerCase(),
     author: bookFormData.get("book-author") as string,
     year: Number(bookFormData.get("book-year")),
     gender: bookFormData.get("book-genre") as string,
@@ -67,9 +78,9 @@ function renderTotalBooks(): void {
   totalBookVolumes.innerText = String(books.length);
 }
 
-function renderBooks(): void {
+function renderBooks(listaDeLivros: Book[] = books): void {
   bookList.innerHTML = "";
-  books.forEach((book) => {
+  listaDeLivros.forEach((book) => {
     const li = document.createElement("li") as HTMLLIElement;
     li.innerHTML = ` <div class="p-4 hover:bg-surface-container-low transition-colors flex items-center justify-between group">
    <div class="flex items-center gap-4">
@@ -80,7 +91,7 @@ function renderBooks(): void {
          src="https:lh3.googleusercontent.com/aida-public/AB6AXuARC64s_l7zgFp-VAHGG-ZnFgoZjy7__i83nf3wZjsPRS4fTn7VRFssY05fHOX2eoyISOVGjGSaxFZVeU2Bx55krvwQPNYE8UOr1Nm7ixnSQVbardARYtkYZ_2JvfUuzpaE2yDkdvMljpSOIOFA-mtzIKGx6Q_ZsgiSfxFn92wNoTppDiqe3DKuv70RqV8DTarZgK9jDMyLnnzTzPAkiWMaq2sEmX3leD-EGFmZfWcLx1qMgfb7v_LA6TWTePtdsv2RM3TEIkjhtvzT" />
      </div>
      <div>
-       <h4 class="font-headline-md text-body-lg text-primary leading-tight">${book.title}</h4>
+       <h4 class="font-headline-md text-body-lg text-primary leading-tight">${book.title[0].toUpperCase() + book.title.substring(1)}</h4>
        <p class="font-body-sm text-body-sm text-on-surface-variant">${book.author}</p>
      </div>
    </div>
