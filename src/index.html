@@ -209,18 +209,19 @@
           <span class="font-headline-xl text-headline-xl text-tertiary-container">0</span>
         </div>
       </div>
-      <div
-        class="glass-card p-6 rounded-xl border border-surface-variant shadow-sm flex flex-col justify-center items-center relative overflow-hidden group cursor-pointer">
+      <button
+        class="glass-card p-6 rounded-xl border border-surface-variant shadow-sm flex flex-col justify-center items-center relative overflow-hidden group cursor-pointer"
+        id="btn_form">
         <div class="absolute inset-0 bg-primary opacity-0 group-hover:opacity-5 transition-opacity"></div>
-        <span class="material-symbols-outlined text-4xl text-primary mb-2">add_circle</span>
-        <span class="font-label-md text-label-md text-primary">Adquirir Novo</span>
-      </div>
+        <span class="font-label-md text-label-md text-primary">Adicionar Livro</span>
+      </button>
     </div>
     <!-- Recent Additions List -->
     <div class="bg-surface-container-lowest rounded-xl border border-surface-variant shadow-sm overflow-hidden">
       <section
-        class="bg-surface-container-lowest rounded-xl border border-surface-variant shadow-sm overflow-hidden mb-stack-lg">
-        <div class="p-6 border-b border-surface-variant bg-surface-bright">
+        class="bg-surface-container-lowest rounded-xl border border-surface-variant shadow-sm overflow-hidden mb-stack-lg hidden"
+        id="form-add-book">
+        <div class="p-6 border-b border-surface-variant bg-surface-bright ">
           <h3 class="font-headline-md text-headline-md text-primary">Adicionar Novo Livro</h3>
           <p class="font-body-sm text-body-sm text-on-surface-variant">Insira os detalhes do novo volume a ser
             adicionado

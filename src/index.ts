@@ -1,9 +1,27 @@
 import { Book, StatusBook } from "./types/Book";
 const bookForm = document.getElementById("addBookForm") as HTMLFormElement;
 const bookList = document.getElementById("bookList") as HTMLUListElement;
+const bookFormContainer = document.getElementById("form-add-book") as HTML;
+
 const totalBookVolumes = document.getElementById(
   "totalBookVolumes",
 ) as HTMLSpanElement;
+const buttonForm = document.getElementById("btn_form") as HTMLButtonElement;
+
+buttonForm.onclick = () => {
+  if (bookFormContainer.style.display === "none") {
+    bookFormContainer.style.display = "block";
+    buttonForm.textContent = "Ocultar ";
+  } else {
+    bookFormContainer.style.display = "none";
+    buttonForm.textContent = "Adicionar Livro";
+    // buttonForm.style =
+    buttonForm.style.fontSize = "14px";
+    buttonForm.style.lineHeight = "20px";
+    buttonForm.style.fontWeight = "500";
+    buttonForm.style.color = "#fffff"; // cor primária de exemplo
+  }
+};
 
 let books: Array<Book> = [];
 console.log(books);
