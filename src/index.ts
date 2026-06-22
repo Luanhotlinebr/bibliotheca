@@ -45,6 +45,7 @@ bookForm.addEventListener("submit", (e: Event) => {
 
   const bookFormData = new FormData(bookForm);
   const novoLivro: Book = {
+    id: Math.floor(Math.random() * 10001),
     title: bookFormData.get("book-title") as string,
     author: bookFormData.get("book-author") as string,
     year: Number(bookFormData.get("book-year")),
@@ -57,6 +58,7 @@ bookForm.addEventListener("submit", (e: Event) => {
   renderBooks();
   renderTotalBooks();
   console.log(totalBookVolumes);
+  console.log(books);
 });
 
 function renderTotalBooks(): void {
@@ -88,7 +90,7 @@ function renderBooks(): void {
      <div class="flex gap-2 opacity-0 group-hover:opacity-100 transition-opacity">
        <button class="p-2 text-secondary hover:text-primary rounded-full hover:bg-surface-variant"><span
            class="material-symbols-outlined text-sm">edit</span></button>
-      <button class="p-2 text-secondary hover:text-error rounded-full hover:bg-error-container btn_delete" data-id="${book.title}">
+      <button class="p-2 text-secondary hover:text-error rounded-full hover:bg-error-container btn_delete" data-id="${book.id}">
         <span class="material-symbols-outlined text-sm">delete</span>
       </button>
      </div>
